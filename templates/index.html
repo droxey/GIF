@@ -1,17 +1,11 @@
-<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
-{% extends "base.html" %}
-{% block content %}
+{% extends 'base.html' %}
         <!-- TODO: Make an HTML form containing a search box and a submit button to add
             the search term to the query string -->
-            <form>
-                <label for = "search box"> Gif search box </label>
-                <input type = "search" id = "search box" name = "q" aria-label = "search through site content">
-                <button>submit</button>
-            </form>
+
         <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
-        {% for param in params %}
-            <h1>{{ param.q }}</h1>
-            <h1>{{ param.key }}</h1>
+        {% block content %}
+        {% for gif in gif_url_array %}
+            <img src = "{{ gif }}" >
         {% endfor %}
+        {% endblock %}
         <!-- TODO: For each gif, include the 'gif.html' template to display it -->
-{% endblock content %}
