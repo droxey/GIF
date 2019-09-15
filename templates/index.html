@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
-        <!-- TODO: Make an HTML form containing a search box and a submit button to add
-            the search term to the query string -->
+<!-- TODO: Make an HTML form containing a search box and a submit button to add
+    the search term to the query string -->
 
-        <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
-        {% block content %}
-        {% for gif in gif_url_array %}
-            <img src = "{{ gif }}" >
+<!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
+    {% block content %}
+        <form action='/'>
+            <input type="search"  name="q">
+            <button type="submit">Submit</button>
+        </form>
+        {% for gif in gif_url_list %}
+            {% include 'gif.html' %}
         {% endfor %}
-        {% endblock %}
-        <!-- TODO: For each gif, include the 'gif.html' template to display it -->
+    {% endblock %}
+
+<!-- TODO: For each gif, include the 'gif.html' template to display it -->
