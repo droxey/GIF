@@ -5,12 +5,10 @@
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
     {% block content %}
         <form action='/'>
-            <input type="search"  name="q">
-            <button type="submit">Submit</button>
+            {% for gif in gifs_trending_url_list %}
+                {% include 'gif.html' %}
+            {% endfor %}
         </form>
-        {% for gif in gif_url_list %}
-            {% include 'gif.html' %}
-        {% endfor %}
     {% endblock %}
 
 <!-- TODO: For each gif, include the 'gif.html' template to display it -->
