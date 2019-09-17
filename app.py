@@ -18,6 +18,7 @@ def index():
 @app.route('/gifs')
 def gifsearch():
     # TODO: Extract query term from url
+    #"Request user input"
     search_term = request.args.get("q")
     # TODO: Make an API call to Tenor using the 'requests' library
     response = requests.get(f'https://api.tenor.com/v1/search?q={search_term}&key=P7Z5S0UI3LE8&limit=10')
