@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for
 import requests
 import json
 
@@ -13,7 +13,10 @@ def index():
 
     #Returns json data
     gifs_trending = json.loads(trending_response.content)
-    return render_template("index.html", gifs_trending_url_list=gifs_trending['results'])
+
+
+
+    return render_template("index.html", gif_url_list=gifs_trending['results'])
 
 @app.route('/gifs')
 def gifsearch():
