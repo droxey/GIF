@@ -2,6 +2,7 @@
 <html>
 <head>
     <!--Required meta tags for bootstrap-->
+    <!--rediet is a beast "-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--bootstrap css-->
@@ -25,6 +26,10 @@
 
             </nav>
         </form>
+            <!--Error search term message-->
+            {% if gif_url_list | length == 0 %}
+            <hi>No GIF could be found for this search term, Please try your search again</hi>
+            {%endif%}
             {% for gif in gif_url_list %}
                 {% include 'gif.html' %}
             {% endfor %}
