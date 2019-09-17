@@ -3,12 +3,20 @@
 <head>
     <meta charset="utf-8">
     <title>GIF Search</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
+    <h1> Gif Search </h1>
     <!-- TODO: Make a block 'body' so that the homepage can extend base -->
+    <form action='/gifs'>
+        <input type="search"  name="q">
+        <button type="submit">Submit</button>
+        {% for gif in gif_url_list %}
+            {% include 'gif.html' %}
+        {% endfor %}
+    </form>
     {% block content %}{% endblock %}
+
 
     <!-- Include the Tenor JavaScript to fill in GIFs appropriately -->
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
