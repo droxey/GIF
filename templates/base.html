@@ -21,6 +21,7 @@
                 </div>
                 <div class="col-4">
                     <button class="btn btn-secondary btn-lg" type="submit">Search</button>
+                    <button class="btn btn-secondary btn-lg" type="submit" formaction="/">Trending</button>
                 </div>
 
 
@@ -28,7 +29,7 @@
         </form>
 
             {% if gif_url_list | length == 0 %}
-                <h1> Please enter a valid gif word :)</h1>
+                <h1> No Gifs could be found for the search term. Please try another search term :)</h1>
             {%endif%}
             {% for gif in gif_url_list %}
                     {% include 'gif.html' %}
@@ -42,7 +43,6 @@
                 </div>
                 {% endfor %}
             </div>
-
 
     <div class="container" class="bar">
         {% block content %}{% endblock %}
