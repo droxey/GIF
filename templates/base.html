@@ -30,10 +30,24 @@
 
             {% if gif_url_list | length == 0 %}
                 <h1> Please enter a valid gif word :)</h1>
+<<<<<<< HEAD
             {% endif %}
             <div class="row">
                 {% for gif in gif_url_list %}
                         {% include 'gif.html' %}
+=======
+            {%endif%}
+            {% for gif in gif_url_list %}
+                    {% include 'gif.html' %}
+            {% endfor %}
+
+            {% for gif_row in gif | batch(3, '&nbsp;') %}
+            <div class="row">
+                {% for gif in gif_url_list %}
+                    <div class="span4">{{ gif }}</div>
+                {% endfor %}
+                </div>
+>>>>>>> liya
                 {% endfor %}
             </div>
 
