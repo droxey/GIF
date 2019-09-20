@@ -22,6 +22,8 @@
                 </div>
                 <div class="col-4">
                     <button class="btn btn-secondary btn-lg" type="submit">Search</button>
+                    <button class="btn btn-secondary btn-lg" type="submit" formaction="/">Trending</button>
+                    <button class="btn btn-secondary btn-lg" type="submit" formaction="/random">Random</button>
                 </div>
 
 
@@ -35,12 +37,12 @@
                 {% for gif in gif_url_list %}
                         {% include 'gif.html' %}
                 {% endfor %}
-            </div>    
+            </div>
 
 
-    <div class="container" class="bar">
+    <!-- <div class="container" class="bar">
         {% block content %}{% endblock %}
-    </div>
+    </div> -->
 
 
 
