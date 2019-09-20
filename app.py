@@ -4,7 +4,7 @@ import json
 
 
 app = Flask(__name__)
-
+""" DESC: All function uses Tenor API """
 @app.route('/')
 def index():
     """Return trending gifs to the homepage."""
@@ -26,8 +26,6 @@ def gifsearch():
     gifs = json.loads(response.content)
     # renders base html file and passes a dictionary of extracted gifs results as a parameter
     return render_template("base.html", gif_url_list=gifs['results'])
-
-
 
 @app.route('/random')
 def random():
